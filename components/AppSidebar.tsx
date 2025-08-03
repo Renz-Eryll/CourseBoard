@@ -9,6 +9,7 @@ import {
   Plus,
   Projector,
   ChevronDown,
+  CreditCard,
 } from "lucide-react";
 import {
   Sidebar,
@@ -58,13 +59,9 @@ const items = [
     url: "/calendar",
     icon: Calendar,
   },
+
   {
-    title: "User Search",
-    url: "/users/search",
-    icon: Search,
-  },
-  {
-    title: "Platform Settings",
+    title: "Settings",
     url: "/settings",
     icon: Settings,
   },
@@ -117,7 +114,7 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/#" className="flex items-center gap-2">
+                  <Link href="/courses" className="flex items-center gap-2">
                     <Projector />
                     <span>All Courses</span>
                   </Link>
@@ -125,9 +122,9 @@ const AppSidebar = () => {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/#" className="flex items-center gap-2">
-                    <Plus />
-                    <span>Add Courses</span>
+                  <Link href="/payments" className="flex items-center gap-2">
+                    <CreditCard />
+                    <span>Payments</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -148,20 +145,16 @@ const AppSidebar = () => {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link href="/#" className="flex items-center gap-2">
+                      <Link
+                        href="/subscription"
+                        className="flex items-center gap-2"
+                      >
                         <Projector />
                         <span>View Plans</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild>
-                      <Link href="/#" className="flex items-center gap-2">
-                        <Plus />
-                        <span>Add Plan</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
+                  <SidebarMenuItem></SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
             </CollapsibleContent>
@@ -174,7 +167,7 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/#" className="flex items-center gap-2">
+                  <Link href="/reports" className="flex items-center gap-2">
                     <Projector />
                     <span>Reports Overview</span>
                   </Link>
@@ -182,7 +175,10 @@ const AppSidebar = () => {
                 <SidebarMenuSub>
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton asChild>
-                      <Link href="/#" className="flex items-center gap-2">
+                      <Link
+                        href="/reports/user-growth"
+                        className="flex items-center gap-2"
+                      >
                         <Plus />
                         <span>User Growth</span>
                       </Link>
@@ -190,7 +186,10 @@ const AppSidebar = () => {
                   </SidebarMenuSubItem>
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton asChild>
-                      <Link href="/#" className="flex items-center gap-2">
+                      <Link
+                        href="/reports/revenue"
+                        className="flex items-center gap-2"
+                      >
                         <Plus />
                         <span>Revenue Report</span>
                       </Link>
@@ -202,25 +201,6 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-
-      <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton className="flex items-center gap-2">
-                  <User2 /> <span>Admin</span> <ChevronUp className="ml-auto" />
-                </SidebarMenuButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>My Profile</DropdownMenuItem>
-                <DropdownMenuItem>Account Settings</DropdownMenuItem>
-                <DropdownMenuItem>Logout</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
     </Sidebar>
   );
 };
