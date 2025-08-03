@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Home,
   Inbox,
@@ -31,6 +33,9 @@ import {
 } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -68,6 +73,8 @@ const items = [
 ];
 
 const AppSidebar = () => {
+  const pathname = usePathname();
+
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="py-4">
@@ -91,7 +98,14 @@ const AppSidebar = () => {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url} className="flex items-center gap-2">
+                    <Link
+                      href={item.url}
+                      className={clsx(
+                        "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                        pathname === item.url &&
+                          "bg-accent text-accent-foreground font-semibold"
+                      )}
+                    >
                       <item.icon className="w-5 h-5" />
                       <span>{item.title}</span>
                     </Link>
@@ -114,7 +128,14 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/courses" className="flex items-center gap-2">
+                  <Link
+                    href="/courses"
+                    className={clsx(
+                      "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                      pathname === "/courses" &&
+                        "bg-accent text-accent-foreground font-semibold"
+                    )}
+                  >
                     <Projector />
                     <span>All Courses</span>
                   </Link>
@@ -122,7 +143,14 @@ const AppSidebar = () => {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/payments" className="flex items-center gap-2">
+                  <Link
+                    href="/payments"
+                    className={clsx(
+                      "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                      pathname === "/payments" &&
+                        "bg-accent text-accent-foreground font-semibold"
+                    )}
+                  >
                     <CreditCard />
                     <span>Payments</span>
                   </Link>
@@ -147,7 +175,11 @@ const AppSidebar = () => {
                     <SidebarMenuButton asChild>
                       <Link
                         href="/subscription"
-                        className="flex items-center gap-2"
+                        className={clsx(
+                          "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                          pathname === "/subscription" &&
+                            "bg-accent text-accent-foreground font-semibold"
+                        )}
                       >
                         <Projector />
                         <span>View Plans</span>
@@ -167,7 +199,14 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/reports" className="flex items-center gap-2">
+                  <Link
+                    href="/reports"
+                    className={clsx(
+                      "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                      pathname === "/reports" &&
+                        "bg-accent text-accent-foreground font-semibold"
+                    )}
+                  >
                     <Projector />
                     <span>Reports Overview</span>
                   </Link>
@@ -177,7 +216,11 @@ const AppSidebar = () => {
                     <SidebarMenuSubButton asChild>
                       <Link
                         href="/reports/user-growth"
-                        className="flex items-center gap-2"
+                        className={clsx(
+                          "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                          pathname === "/reports/user-growth" &&
+                            "bg-accent text-accent-foreground font-semibold"
+                        )}
                       >
                         <Plus />
                         <span>User Growth</span>
@@ -188,7 +231,11 @@ const AppSidebar = () => {
                     <SidebarMenuSubButton asChild>
                       <Link
                         href="/reports/revenue"
-                        className="flex items-center gap-2"
+                        className={clsx(
+                          "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-muted",
+                          pathname === "/reports/revenue" &&
+                            "bg-accent text-accent-foreground font-semibold"
+                        )}
                       >
                         <Plus />
                         <span>Revenue Report</span>
