@@ -7,52 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { MessageSquare, Search, Send, MailCheck, MailOpen } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-
-const dummyMessages = [
-  {
-    id: 1,
-    sender: "Jane Doe",
-    category: "Course Inquiry",
-    message:
-      "Hi! I have a question about the course materials. Can you help me understand Lesson 3?",
-    avatar:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800",
-    time: "2 mins ago",
-    status: "Unread",
-  },
-  {
-    id: 2,
-    sender: "John Smith",
-    category: "Technical Issue",
-    message:
-      "I can't access the next module after completing the quiz. It seems stuck. Please assist.",
-    avatar:
-      "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800",
-    time: "10 mins ago",
-    status: "Responded",
-  },
-  {
-    id: 3,
-    sender: "Alex Rivera",
-    category: "Feedback",
-    message:
-      "The video content is excellent. Great job to the instructors! I’d love to see more.",
-    avatar:
-      "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800",
-    time: "1 hour ago",
-    status: "Unread",
-  },
-  {
-    id: 4,
-    sender: "Lily Adams",
-    category: "Course Request",
-    message: "Can you add a course on Docker and DevOps tools?",
-    avatar:
-      "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=800",
-    time: "Yesterday",
-    status: "Responded",
-  },
-];
+import { dummyMessages } from "@/constants";
 
 export default function MessagesPage() {
   const [expandedMessageId, setExpandedMessageId] = useState<number | null>(

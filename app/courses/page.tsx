@@ -5,41 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Plus, Search, BookOpen } from "lucide-react";
 import Image from "next/image";
-
-const dummyCourses = [
-  {
-    id: 1,
-    title: "Introduction to UI/UX Design",
-    instructor: "Jane Doe",
-    enrolled: 120,
-    image:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 2,
-    title: "React for Beginners",
-    instructor: "John Smith",
-    enrolled: 200,
-    image:
-      "https://images.pexels.com/photos/11035372/pexels-photo-11035372.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 3,
-    title: "Advanced TypeScript",
-    instructor: "Sam Taylor",
-    enrolled: 95,
-    image:
-      "https://images.pexels.com/photos/1181315/pexels-photo-1181315.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 4,
-    title: "Building RESTful APIs with Node.js",
-    instructor: "Alex Rivera",
-    enrolled: 160,
-    image:
-      "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-];
+import { dummyCourses } from "@/constants";
 
 export default function CoursesPage() {
   return (

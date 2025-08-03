@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { growthData, revenueData } from "@/constants";
 import { CalendarDays, LineChart, Users, DollarSign } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -10,24 +11,6 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
-
-const revenueData = [
-  { month: "Jan", revenue: 3200 },
-  { month: "Feb", revenue: 4200 },
-  { month: "Mar", revenue: 5000 },
-  { month: "Apr", revenue: 4700 },
-  { month: "May", revenue: 5600 },
-  { month: "Jun", revenue: 6300 },
-];
-
-const growthData = [
-  { month: "Jan", users: 220 },
-  { month: "Feb", users: 310 },
-  { month: "Mar", users: 480 },
-  { month: "Apr", users: 560 },
-  { month: "May", users: 670 },
-  { month: "Jun", users: 740 },
-];
 
 export default function ReportOverviewPage() {
   return (

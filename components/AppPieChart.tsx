@@ -8,6 +8,7 @@ import {
   ChartTooltipContent,
 } from "./ui/chart";
 import { TrendingUp } from "lucide-react";
+import { pieChartData } from "@/constants";
 
 const chartConfig = {
   users: {
@@ -35,17 +36,12 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-const chartData = [
-  { browser: "desktop", visitors: 520, fill: "var(--color-desktop)" },
-  { browser: "mobile", visitors: 680, fill: "var(--color-mobile)" },
-  { browser: "tablet", visitors: 240, fill: "var(--color-tablet)" },
-  { browser: "smarttv", visitors: 70, fill: "var(--color-smarttv)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-];
-
 const AppPieChart = () => {
   // If you don't use React compiler use useMemo hook to improve performance
-  const totalVisitors = chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+  const totalVisitors = pieChartData.reduce(
+    (acc, curr) => acc + curr.visitors,
+    0
+  );
 
   return (
     <div className="">
@@ -60,7 +56,7 @@ const AppPieChart = () => {
             content={<ChartTooltipContent hideLabel />}
           />
           <Pie
-            data={chartData}
+            data={pieChartData}
             dataKey="visitors"
             nameKey="browser"
             innerRadius={60}

@@ -19,15 +19,7 @@ import {
   PopoverContent,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-
-const userGrowthData = [
-  { month: "Jan", users: 200 },
-  { month: "Feb", users: 340 },
-  { month: "Mar", users: 410 },
-  { month: "Apr", users: 520 },
-  { month: "May", users: 690 },
-  { month: "Jun", users: 860 },
-];
+import { userGrowthData } from "@/constants";
 
 export default function UserGrowthPage() {
   const [date, setDate] = React.useState<Date | undefined>(undefined);

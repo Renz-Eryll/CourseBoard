@@ -9,19 +9,7 @@ import { Button } from "./ui/button";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { Calendar } from "./ui/calendar";
-
-const tasks = [
-  { id: "task1", label: "Review submitted assignments", checked: true },
-  { id: "task2", label: "Publish new course material", checked: false },
-  { id: "task3", label: "Schedule live session", checked: false },
-  { id: "task4", label: "Update course pricing", checked: true },
-  { id: "task5", label: "Reply to student inquiries", checked: false },
-  { id: "task6", label: "Check subscription analytics", checked: true },
-  { id: "task7", label: "Upload weekly quiz", checked: false },
-  { id: "task8", label: "Approve course certificates", checked: true },
-  { id: "task9", label: "Backup course content", checked: false },
-  { id: "task10", label: "Review platform feedback", checked: true },
-];
+import { tasks } from "@/constants";
 
 const TodoList = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());

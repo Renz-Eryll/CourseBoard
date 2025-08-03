@@ -7,15 +7,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
+import { lineChartData } from "@/constants";
 
-const chartData = [
-  { month: "January", desktop: 1400, mobile: 800 },
-  { month: "February", desktop: 1800, mobile: 1200 },
-  { month: "March", desktop: 1700, mobile: 1100 },
-  { month: "April", desktop: 1300, mobile: 1600 },
-  { month: "May", desktop: 1900, mobile: 1500 },
-  { month: "June", desktop: 2000, mobile: 1700 },
-];
 const chartConfig = {
   desktop: {
     label: "Desktop",
@@ -35,7 +28,7 @@ const AppLineChart = () => {
         <ChartContainer config={chartConfig} className="mt-6">
           <LineChart
             accessibilityLayer
-            data={chartData}
+            data={lineChartData}
             margin={{
               left: 12,
               right: 12,

@@ -7,6 +7,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+import { barChartData } from "@/constants";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 const chartConfig = {
@@ -19,15 +20,6 @@ const chartConfig = {
     color: "var(--chart-4)",
   },
 } satisfies ChartConfig;
-
-const chartData = [
-  { month: "January", desktop: 4200, mobile: 1800 },
-  { month: "February", desktop: 5800, mobile: 3100 },
-  { month: "March", desktop: 4900, mobile: 2400 },
-  { month: "April", desktop: 2300, mobile: 3900 },
-  { month: "May", desktop: 5100, mobile: 3000 },
-  { month: "June", desktop: 5200, mobile: 3400 },
-];
 
 const AppBarChart = () => {
   return (
@@ -44,7 +36,7 @@ const AppBarChart = () => {
         >
           <BarChart
             accessibilityLayer
-            data={chartData}
+            data={barChartData}
             width={600}
             height={300}
           >

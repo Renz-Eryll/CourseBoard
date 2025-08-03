@@ -7,6 +7,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+import { areaChartData } from "@/constants";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 const chartConfig = {
@@ -20,21 +21,12 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-const chartData = [
-  { month: "January", desktop: 320, mobile: 210 }, // New Year surge
-  { month: "February", desktop: 410, mobile: 300 }, // Growth due to promotions
-  { month: "March", desktop: 380, mobile: 250 }, // Stable usage
-  { month: "April", desktop: 290, mobile: 270 }, // Exam period
-  { month: "May", desktop: 330, mobile: 310 }, // Mid-year boost
-  { month: "June", desktop: 390, mobile: 350 }, // Launch of new courses
-];
-
 const AppAreaChart = () => {
   return (
     <div className="">
       <h1 className="text-lg font-medium mb-6">Monthly Course Views</h1>
       <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
-        <AreaChart accessibilityLayer data={chartData}>
+        <AreaChart accessibilityLayer data={areaChartData}>
           <CartesianGrid vertical={false} />
           <XAxis
             dataKey="month"

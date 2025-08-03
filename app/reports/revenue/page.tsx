@@ -8,6 +8,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { BarChart, CartesianGrid, XAxis, YAxis, Bar } from "recharts";
+import { revenueChartData, transactions } from "@/constants";
 
 const summary = [
   {
@@ -24,39 +25,6 @@ const summary = [
     icon: <BarChart2 className="text-purple-600" />,
     label: "Active Plans",
     value: "1,024",
-  },
-];
-
-const chartData = [
-  { month: "Jan", revenue: 5200 },
-  { month: "Feb", revenue: 6800 },
-  { month: "Mar", revenue: 7200 },
-  { month: "Apr", revenue: 6100 },
-  { month: "May", revenue: 8900 },
-  { month: "Jun", revenue: 9400 },
-];
-
-const transactions = [
-  {
-    id: "TXN-001",
-    customer: "Jane Doe",
-    amount: "$120.00",
-    plan: "Pro Plan",
-    date: "2025-07-10",
-  },
-  {
-    id: "TXN-002",
-    customer: "John Smith",
-    amount: "$60.00",
-    plan: "Basic Plan",
-    date: "2025-07-09",
-  },
-  {
-    id: "TXN-003",
-    customer: "Alice Johnson",
-    amount: "$180.00",
-    plan: "Premium Plan",
-    date: "2025-07-09",
   },
 ];
 
@@ -101,7 +69,7 @@ export default function RevenueReportPage() {
               },
             }}
           >
-            <BarChart width={600} height={250} data={chartData}>
+            <BarChart width={600} height={250} data={revenueChartData}>
               <CartesianGrid vertical={false} />
               <XAxis dataKey="month" tickLine={false} />
               <YAxis tickLine={false} />
