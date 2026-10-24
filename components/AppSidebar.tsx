@@ -4,10 +4,7 @@ import {
   Home,
   Inbox,
   Calendar,
-  Search,
   Settings,
-  User2,
-  ChevronUp,
   Plus,
   Projector,
   ChevronDown,
@@ -16,7 +13,6 @@ import {
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupAction,
   SidebarGroupContent,
@@ -36,12 +32,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import {
   Collapsible,
   CollapsibleContent,
