@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MessageSquare, Search, Send, MailCheck, MailOpen } from "lucide-react";
+import { MessageSquare, Search, Send, MailCheck } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { dummyMessages } from "@/constants";

@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { growthData, revenueData } from "@/constants";
-import { CalendarDays, LineChart, Users, DollarSign } from "lucide-react";
+import { LineChart, Users, DollarSign } from "lucide-react";
 import {
   ResponsiveContainer,
   LineChart as RechartsLineChart,
